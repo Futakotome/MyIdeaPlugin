@@ -14,12 +14,11 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <projectTemplatesFactory implementation="io.futatkotome.mydddplugin.factory.TemplateFactory"/>
+        <applicationService serviceImplementation="io.futatkotome.mydddplugin.infrastructure.DataSetting"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
-        <action id="MyAction" class="io.futatkotome.mydddplugin.MyAction" text="MyAction" description="MyAction">
-            <add-to-group group-id="FileMenu" anchor="first"/>
-        </action>
     </actions>
 </idea-plugin>
