@@ -99,3 +99,5 @@ hs_err_pid*
 
 .gradle
 .idea
+gradlew
+gradlew.bat
