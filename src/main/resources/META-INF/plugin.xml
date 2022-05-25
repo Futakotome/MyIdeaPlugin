@@ -1,10 +1,10 @@
 <idea-plugin>
     <id>io.futakotome.DDDPlugin</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>my ddd'idea plugin</name>
+    <vendor email="983528987@qq.com">io.futatkotome</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
+    DDD idea plugin to fast development for me.<br>
     <em>most HTML tags may be used</em>
     ]]></description>
 
@@ -18,5 +18,8 @@
 
     <actions>
         <!-- Add your actions here -->
+        <action id="MyAction" class="io.futatkotome.mydddplugin.MyAction" text="MyAction" description="MyAction">
+            <add-to-group group-id="FileMenu" anchor="first"/>
+        </action>
     </actions>
 </idea-plugin>
