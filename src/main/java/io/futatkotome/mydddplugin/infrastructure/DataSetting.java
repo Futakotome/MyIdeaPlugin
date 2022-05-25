@@ -27,7 +27,7 @@ public class DataSetting implements PersistentStateComponent<DataState> {
         this.state = dataState;
     }
 
-    public ProjectConfigVO getProjectConfigVO() {
+    public ProjectConfigVO getProjectConfig() {
         return state.getProjectConfigVO();
     }
 

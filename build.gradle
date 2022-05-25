@@ -11,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.31'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
