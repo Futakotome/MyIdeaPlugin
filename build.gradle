@@ -5,6 +5,7 @@ plugins {
 
 group 'io.futakotome'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -19,7 +20,17 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version = '2020.3.2'
+    plugins = ['com.intellij.java']
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
 patchPluginXml {
 
 }
