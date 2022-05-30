@@ -6,16 +6,19 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import io.futatkotome.mydddplugin.domain.model.vo.ORMConfigVO;
-import io.futatkotome.mydddplugin.domain.model.vo.ProjectConfigVO;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@State(name = "DataSetting", storages = @Storage("plugin.xml"))
-public class DataSetting implements PersistentStateComponent<DataState> {
+@State(name = "ORMDataSetting", storages = @Storage("plugin.xml"))
+public class ORMDataSetting implements PersistentStateComponent<DataState> {
     private DataState state = new DataState();
 
-    public static DataSetting getInstance() {
-        return ServiceManager.getService(DataSetting.class);
+    public static ORMDataSetting getInstance(Project project) {
+        return ServiceManager.getService(project, ORMDataSetting.class);
+    }
+
+    public ORMConfigVO getORMConfig() {
+        return state.getOrmConfigVO();
     }
 
     @Override
@@ -28,9 +31,4 @@ public class DataSetting implements PersistentStateComponent<DataState> {
     public void loadState(@NotNull DataState dataState) {
         this.state = dataState;
     }
-
-    public ProjectConfigVO getProjectConfig() {
-        return state.getProjectConfigVO();
-    }
-
 }

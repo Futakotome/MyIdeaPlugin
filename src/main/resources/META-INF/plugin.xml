@@ -17,14 +17,19 @@
         <!-- Add your extensions here -->
         <projectTemplatesFactory implementation="io.futatkotome.mydddplugin.factory.TemplateFactory"/>
         <applicationService serviceImplementation="io.futatkotome.mydddplugin.infrastructure.DataSetting"/>
+        <projectService serviceImplementation="io.futatkotome.mydddplugin.infrastructure.ORMDataSetting"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
-        <action id="EasyGetSetAction" class="io.futatkotome.mydddplugin.action.EasyGetSetAction" text="EasyGetSet"
-                description="EasyGetSetGenerator" icon="/icons/easyGetSet.png">
+        <action id="EasyGetSetAction" class="io.futatkotome.mydddplugin.action.EasyGetSetAction"
+                text="EasyGetSet" description="EasyGetSetGenerator" icon="/icons/easyGetSet.png">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift K"/>
+        </action>
+        <action id="ORMCodeGenerateAction" class="io.futatkotome.mydddplugin.action.ORMCodeGenerateAction"
+                text="ORM代码生成" description="ORM code generate" icon="/icons/ormLogo.png">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
     </actions>
 </idea-plugin>
