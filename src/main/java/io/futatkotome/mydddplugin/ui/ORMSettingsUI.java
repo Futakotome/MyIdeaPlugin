@@ -110,7 +110,7 @@ public class ORMSettingsUI implements Configurable {
                 tc.setCellRenderer(table1.getDefaultRenderer(Boolean.class));
                 tc.setMaxWidth(100);
             } catch (Exception exception) {
-                Messages.showWarningDialog(project, "Database connect error.", "Warning");
+                Messages.showWarningDialog(project, exception.getMessage(), "Warning");
             }
         });
 
