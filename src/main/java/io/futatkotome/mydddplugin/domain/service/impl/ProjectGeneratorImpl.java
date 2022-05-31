@@ -26,14 +26,14 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure", entryPath, "package-info.java", "infrastructure/package-info.ftl", projectConfig);
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.dao", entryPath, "", "", projectConfig);
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.po", entryPath, "", "", projectConfig);
-        
+
         // create interfaces
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".interfaces", entryPath, "package-info.java", "interfaces/package-info.ftl", projectConfig);
     }
 
     @Override
     protected void generateApplication(Project project, String entryPath, ProjectConfigVO projectConfig) {
-        writeFile(project, "src/main/java/" + projectConfig.get_package(), entryPath, projectConfig.get_artifactId() + "Application.java", "application.ftl", projectConfig);
+        writeFile(project, "src/main/java/" + projectConfig.get_package(), entryPath, "ServiceApplication.java", "application.ftl", projectConfig);
     }
 
     @Override
@@ -48,12 +48,12 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
 
     @Override
     protected void generateIgnore(Project project, String entryPath, ProjectConfigVO projectConfig) {
-        writeFile(project, "/", entryPath, ".gitignore", "ignore.yml", projectConfig);
+        writeFile(project, "/", entryPath, ".gitignore", "ignore.ftl", projectConfig);
     }
 
     @Override
     protected void generateMyBatisGeneratorAndConfig(Project project, String entryPath, ProjectConfigVO projectConfig) {
-        writeFile(project, "src/main/resources/", entryPath, "mybatis-config.xml", "mybatis-config.ftl", projectConfig);
-        writeFile(project, "src/main/resources/", entryPath, "mybatis-generator.xml", "mybatis-generator.ftl", projectConfig);
+        writeFile(project, "src/main/resources/", entryPath, "mybatis-config.xml", "mybatis/mybatis-config.ftl", projectConfig);
+        writeFile(project, "src/main/resources/", entryPath, "mybatis-generator.xml", "mybatis/mybatis-generator.ftl", projectConfig);
     }
 }
