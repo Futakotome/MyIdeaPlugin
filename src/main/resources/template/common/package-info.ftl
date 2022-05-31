@@ -1,1 +1,1 @@
-package ${_package+'.common'}
+package ${_package+'.common'};
