@@ -1,6 +1,5 @@
 package ${package};
 
-import lombok.Data;
 <#list imports as import>
     import ${import};
 </#list>
@@ -8,7 +7,6 @@ import lombok.Data;
 /**
 * ${comment}
 */
-@Data
 public class ${simpleName} {
 <#list fields as field>
     /**
