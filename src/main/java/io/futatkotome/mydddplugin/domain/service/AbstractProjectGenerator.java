@@ -32,6 +32,12 @@ public abstract class AbstractProjectGenerator extends FreemarkerConfiguration i
 
         // 5. 创建 Common
         generateCommon(project, entryPath, projectConfigVO);
+
+        // 6. 创建git ignore
+        generateIgnore(project, entryPath, projectConfigVO);
+
+        // 7. 创建mybatis框架相关
+        generateMyBatisGeneratorAndConfig(project, entryPath, projectConfigVO);
     }
 
     protected abstract void generateProjectPOM(Project project, String entryPath, ProjectConfigVO projectConfig);
@@ -43,6 +49,10 @@ public abstract class AbstractProjectGenerator extends FreemarkerConfiguration i
     protected abstract void generateYml(Project project, String entryPath, ProjectConfigVO projectConfig);
 
     protected abstract void generateCommon(Project project, String entryPath, ProjectConfigVO projectConfig);
+
+    protected abstract void generateIgnore(Project project, String entryPath, ProjectConfigVO projectConfig);
+
+    protected abstract void generateMyBatisGeneratorAndConfig(Project project, String entryPath, ProjectConfigVO projectConfig);
 
     public void writeFile(Project project, String packageName, String entryPath, String name, String ftl, Object dataModel) {
         VirtualFile virtualFile = null;

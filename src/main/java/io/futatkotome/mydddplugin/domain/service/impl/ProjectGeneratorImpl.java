@@ -24,7 +24,9 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
 
         // create infrastructure
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure", entryPath, "package-info.java", "infrastructure/package-info.ftl", projectConfig);
-
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.dao", entryPath, "", "", projectConfig);
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.po", entryPath, "", "", projectConfig);
+        
         // create interfaces
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".interfaces", entryPath, "package-info.java", "interfaces/package-info.ftl", projectConfig);
     }
@@ -42,5 +44,16 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
     @Override
     protected void generateCommon(Project project, String entryPath, ProjectConfigVO projectConfig) {
         writeFile(project, "src/main/java/" + projectConfig.get_package() + "/common", entryPath, "Constants.java", "common/Constants.ftl", projectConfig);
+    }
+
+    @Override
+    protected void generateIgnore(Project project, String entryPath, ProjectConfigVO projectConfig) {
+        writeFile(project, "/", entryPath, ".gitignore", "ignore.yml", projectConfig);
+    }
+
+    @Override
+    protected void generateMyBatisGeneratorAndConfig(Project project, String entryPath, ProjectConfigVO projectConfig) {
+        writeFile(project, "src/main/resources/", entryPath, "mybatis-config.xml", "mybatis-config.ftl", projectConfig);
+        writeFile(project, "src/main/resources/", entryPath, "mybatis-generator.xml", "mybatis-generator.ftl", projectConfig);
     }
 }
