@@ -21,7 +21,4 @@
         <!-- 设置驼峰标识 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-    <plugins>
-        <plugin interceptor="com.github.pagehelper.PageInterceptor" />
-    </plugins>
 </configuration>
