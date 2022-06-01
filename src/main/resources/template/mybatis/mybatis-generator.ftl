@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <!-- 配置生成器 -->
 <generatorConfiguration>
-    <context id="MysqlTables" targetRuntime="MyBatis3DynamicSql" defaultModelType="flat">
+    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖 -->
         <property name="autoDelimitKeywords" value="true"/>
         <!-- 生成的Java文件的编码 -->
