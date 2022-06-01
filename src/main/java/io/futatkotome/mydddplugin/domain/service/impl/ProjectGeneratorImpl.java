@@ -25,7 +25,7 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
         // create infrastructure
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure", entryPath, "package-info.java", "infrastructure/package-info.ftl", projectConfig);
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.dao", entryPath, "", "", projectConfig);
-        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.po", entryPath, "", "", projectConfig);
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.pojo", entryPath, "", "", projectConfig);
         // create interfaces
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".interfaces", entryPath, "package-info.java", "interfaces/package-info.ftl", projectConfig);
     }
