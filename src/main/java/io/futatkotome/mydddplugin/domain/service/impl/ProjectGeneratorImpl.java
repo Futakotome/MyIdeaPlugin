@@ -15,7 +15,7 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
     protected void generateProjectDDD(Project project, String entryPath, ProjectConfigVO projectConfig) {
         // create application
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".application", entryPath, "package-info.java", "application/package-info.ftl", projectConfig);
-
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".application", entryPath, "GlobalExceptionHandler.java", "application/GlobalExceptionHandler.ftl", projectConfig);
         // create common
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".common", entryPath, "package-info.java", "common/package-info.ftl", projectConfig);
 
