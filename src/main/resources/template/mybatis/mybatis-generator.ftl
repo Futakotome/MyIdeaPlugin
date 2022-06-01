@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <!-- 配置生成器 -->
 <generatorConfiguration>
-    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">
+    <context id="MysqlTables" targetRuntime="MyBatis3DynamicSql" defaultModelType="flat">
         <!-- 自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖 -->
         <property name="autoDelimitKeywords" value="true"/>
         <!-- 生成的Java文件的编码 -->
@@ -33,9 +33,11 @@
         <javaTypeResolver>
             <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
             <property name="forceBigDecimals" value="false"/>
+            <!--  是否使用jsr310日期类          -->
+            <property name="useJSR310Types" value="true"/>
         </javaTypeResolver>
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="io.futakotome.test.infrastructure.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="${_package}.infrastructure.pojo" targetProject="src/main/java">
             <!-- 是否允许子包 是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对modal添加构造函数 -->
@@ -50,7 +52,7 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!-- 生成接口dao -->
-        <javaClientGenerator targetPackage="io.futakotome.test.infrastructure.dao" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="${_package}.infrastructure.dao" targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 enableSelectByPrimaryKey相应的配置表示是否生成相应的接口 -->
