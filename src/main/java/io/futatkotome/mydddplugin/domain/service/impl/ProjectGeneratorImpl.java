@@ -18,15 +18,14 @@ public class ProjectGeneratorImpl extends AbstractProjectGenerator {
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".application", entryPath, "GlobalExceptionHandler.java", "application/GlobalExceptionHandler.ftl", projectConfig);
         // create common
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".common", entryPath, "package-info.java", "common/package-info.ftl", projectConfig);
-
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".common", entryPath, "BusinessResponse.java", "common/BusinessResponse.ftl", projectConfig);
+        writeFile(project, "src/main/java/" + projectConfig.get_package() + ".common", entryPath, "BusinessException.java", "common/BusinessException.ftl", projectConfig);
         // create domain
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".domain", entryPath, "package-info.java", "domain/package-info.ftl", projectConfig);
-
         // create infrastructure
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure", entryPath, "package-info.java", "infrastructure/package-info.ftl", projectConfig);
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.dao", entryPath, "", "", projectConfig);
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".infrastructure.po", entryPath, "", "", projectConfig);
-
         // create interfaces
         writeFile(project, "src/main/java/" + projectConfig.get_package() + ".interfaces", entryPath, "package-info.java", "interfaces/package-info.ftl", projectConfig);
     }
